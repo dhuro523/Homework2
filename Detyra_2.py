@@ -13,3 +13,9 @@ def clean_data(values):
             return int(val)
         except ValueError:
             return None
+
+    mapped_results = map(convert_to_int, values)
+    return [x for x in mapped_results if x is not None]
+
+values = ["5", "10", "x", "15", "NaN", "20"]
+cleaned_values = clean_data(values)
