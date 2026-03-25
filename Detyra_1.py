@@ -11,5 +11,17 @@ def validate_orders(orders):
             valid_orders.append(order)
     return valid_orders
 
-result = validate_orders(orders)
-print(result)
+def calculate_total(orders):
+    grand_total = 0
+    print("Order Summary: ")
+    print("----------------------")
+    for order in orders:
+        order_total = order["price"] * order["quantity"]
+        grand_total += order_total
+        print(f"Order ID: {order['order_id']}, Price: {order['price']}, Quantity: {order['quantity']}, Total: {order_total}")
+        
+    print("----------------------")
+    print(f"Grand Total: {grand_total}")
+
+valid_orders = validate_orders(orders)
+calculate_total(valid_orders)
