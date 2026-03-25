@@ -19,5 +19,8 @@ for user in users:
     if user["salary"] < 0:
         errors.append("Salary must be a positive.")
 
-    
-    
+    if errors:
+        invalid_records.append({"user": user, "errors": errors})
+
+for record in invalid_records:
+    print(record)
